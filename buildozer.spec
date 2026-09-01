@@ -22,12 +22,7 @@ icon.filename = %(source.dir)s/assets/icone.png
 
 android.api = 34
 android.minapi = 24
-android.ndk = 26.1.10909125
 android.archs = arm64-v8a,armeabi-v7a
-
-android.gradle_dependencies = 
-
-android.add_src = 
 
 [buildozer]
 log_level = 2
