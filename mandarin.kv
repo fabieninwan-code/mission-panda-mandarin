@@ -1,0 +1,95 @@
+#:import theme theme
+
+<BoutonPrincipal@Button>:
+    font_size: '22sp'
+    bold: True
+    background_normal: ''
+    background_color: theme.ACCENT
+    color: 0.1, 0.1, 0.1, 1
+    size_hint_y: None
+    height: '64dp'
+
+<BoutonMenu@Button>:
+    font_size: '18sp'
+    background_normal: ''
+    background_color: theme.FOND_CARTE
+    color: theme.TEXTE
+    size_hint_y: None
+    height: '58dp'
+    halign: 'left'
+    valign: 'middle'
+    text_size: self.size[0] - dp(20), None
+    padding: dp(16), 0
+
+<BoutonSecondaire@Button>:
+    font_size: '16sp'
+    background_normal: ''
+    background_color: theme.FOND_CARTE
+    color: theme.TEXTE_SECONDAIRE
+    size_hint_y: None
+    height: '48dp'
+
+<TitreEcran@Label>:
+    font_size: '26sp'
+    bold: True
+    color: theme.TEXTE
+    size_hint_y: None
+    height: '48dp'
+
+<TexteInfo@Label>:
+    font_size: '15sp'
+    color: theme.TEXTE_SECONDAIRE
+
+<EcranAccueil>:
+    name: 'accueil'
+    canvas.before:
+        Color:
+            rgba: theme.FOND
+        Rectangle:
+            pos: self.pos
+            size: self.size
+    ScrollView:
+        BoxLayout:
+            orientation: 'vertical'
+            spacing: dp(10)
+            padding: dp(24)
+            size_hint_y: None
+            height: self.minimum_height
+
+            Label:
+                text: '🐼'
+                font_size: '72sp'
+                size_hint_y: None
+                height: '110dp'
+            TitreEcran:
+                text: 'Mission Panda Mandarin'
+                halign: 'center'
+            Label:
+                id: label_etoiles
+                text: '⭐ 0 étoiles'
+                font_size: '18sp'
+                color: theme.ACCENT
+                size_hint_y: None
+                height: '40dp'
+
+            BoutonMenu:
+                text: '🎵  Le Dresseur de Tons'
+                on_release: app.aller_vers('tone_trainer')
+            BoutonMenu:
+                text: '🗺️  Les Îles du Vocabulaire'
+                on_release: app.aller_vers('vocabulaire')
+            BoutonMenu:
+                text: '🧭  Mission Survie'
+                on_release: app.aller_vers('missions')
+            BoutonMenu:
+                text: '⚔️  Défi Chronométré'
+                on_release: app.aller_vers('duel')
+            BoutonMenu:
+                text: '🎍  Le Jardin des Mots'
+                on_release: app.aller_vers('jardin')
+            BoutonMenu:
+                text: '🐼  Mon Panda'
+                on_release: app.aller_vers('avatar')
+            BoutonMenu:
+                text: '👨‍👩‍👧  Espace Parent'
+                on_release: app.aller_vers('parent')
